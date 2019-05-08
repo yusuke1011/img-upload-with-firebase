@@ -2,14 +2,17 @@
   <div id="app">
     <h1>ログイン画面</h1>
     <div>
+      {{errMsg}}
+    </div>
+    <div>
       <table class="form-table">
         <tr>
           <th><label for="login-email">メールアドレス</label></th>
-          <td><input type="text" id="login-email"></td>
+          <td><input type="text" id="login-email" placeholder="E-mail" v-model="email"></td>
         </tr>
         <tr>
           <th><label for="login-pass">パスワード</label></th>
-          <td><input type="text" id="login-pass"></td>
+          <td><input type="text" id="login-pass" placeholder="Password" v-model="pass"></td>
         </tr>
       </table>
     </div>
@@ -18,7 +21,7 @@
         type="button"
         size="lg"
         variant="outline-primary"
-        v-on:click="start"
+        v-on:click="login"
       >ログイン</b-button>
     </div>
     <div class="signup-area">
@@ -28,21 +31,43 @@
 </template>
 
 <script>
+import firebase from "firebase";
+
 export default {
   name: "App",
+  components: {
+    firebase
+  },
+  data() {
+    return {
+      email: '',
+      pass: '',
+      errCode: '',
+      errMsg: ''
+    };
+  },
   methods: {
-    start() {
-      //mode_options画面へ遷移
-      this.$router.push("/login");
+    login() {
+      console.log(this.$store.state.auth.user)
+      //ログイン処理
+      firebase.auth().signInWithEmailAndPassword(this.email, this.pass)
+      .then(loginUser => {
+        this.$store.commit('login', {user: loginUser})
+        console.log(this.$store.state.auth.user)
+
+        //ログイン画面へ遷移
+        this.$router.push('/index');
+      })
+      .catch(error => {
+        //エラー処理
+        this.errCode = error.code;
+        this.errMsg = error.message;
+      });
     }
   }
 };
 </script>
 
 <style scoped>
-
-.signup-area {
-
-}
 
 </style>

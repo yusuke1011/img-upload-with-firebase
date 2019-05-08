@@ -5,6 +5,8 @@ import VueRouter from 'vue-router'
 import Home from '@/views/Home.vue'
 import Login from '@/views/Login.vue'
 import Signup from '@/views/Signup.vue'
+import Index from '@/views/Index.vue'
+import Result from '@/views/Result.vue'
 
 //プラグインとして登録
 Vue.use(VueRouter);
@@ -17,7 +19,9 @@ const router = new VueRouter({
   routes: [
     { path: '/', component: Home },
     { path: '/login', component: Login },
-    { path: '/signup', component: Signup }
+    { path: '/signup', component: Signup },
+    { path: '/index', component: Index},
+    { path: '/result', component: Result}
   ]
 })
 

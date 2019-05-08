@@ -10,11 +10,16 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "bootstrap-vue": "^2.0.0-rc.11",
+    "firebase": "^6.0.0",
+    "node-gyp": "^4.0.0",
     "peer": "^0.2.10",
     "vue": "^2.5.2",
+    "vue-qriously": "^1.1.1",
     "vue-router": "^3.0.2",
-    "vuedraggable": "^2.17.0"
+    "vuedraggable": "^2.17.0",
+    "vuex": "^3.1.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
