@@ -3,7 +3,7 @@
 サーバ側の画面のスクリーンショットをクライアント側に表示させ、クラウドストレージもできます。
 保存後はQLコードで保存先にアクセスすることができます。
 
-![image](https://github.com/yusuke1011/layout-suggestion/blob/image/image.PNG)  
+![image](https://github.com/yusuke1011/img-upload-with-firebase/blob/image/image.PNG)  
 
 ### 背景
 とある装置に表示されている画面のスクリーンショットをiPadなどの端末で確認したいという要望を実現しました。
