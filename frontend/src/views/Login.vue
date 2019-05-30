@@ -55,7 +55,7 @@ export default {
         this.$store.commit('login', {user: loginUser})
         console.log(this.$store.state.auth.user)
 
-        //ログイン画面へ遷移
+        //index画面へ遷移
         this.$router.push('/index');
       })
       .catch(error => {

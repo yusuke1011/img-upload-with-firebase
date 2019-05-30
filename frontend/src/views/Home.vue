@@ -17,7 +17,7 @@ export default {
   name: "App",
   methods: {
     start() {
-      //mode_options画面へ遷移
+      //login画面へ遷移
       this.$router.push("/login");
     }
   }
